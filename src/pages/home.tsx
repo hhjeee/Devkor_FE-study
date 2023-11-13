@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Makeup } from "interface/makeup";
+//import { useQuery } from "@tanstack/react-query";
+//import getProducts from "api/product";
 
 export default function HomePage() {
   const [data, setData] = useState<Makeup[]>();
@@ -9,14 +11,13 @@ export default function HomePage() {
   useEffect(() => {
     //get(endpoint 주소)
     axios
-      .get(process.env.REACT_APP_API_URL!)
+      .get(
+        "https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline"
+      )
       .then((res) => {
         console.log(res.data);
         setData(res.data);
         //setUser(res.data.result[0]); 사람정보 접근
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
       });
   }, []);
 
@@ -37,6 +38,22 @@ export default function HomePage() {
       </BigContainer>
     </>
   );
+
+  /*const { data } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+  return (
+    <div>
+      {data &&
+        data.map((product: any) => (
+          <Container>
+            <h2>{product.name}</h2>
+            <h3>{product.price}</h3>
+          </Container>
+        ))}
+    </div>
+  );*/
 }
 
 const Title = styled.div`
@@ -84,3 +101,17 @@ const GridItem = styled.div`
     height: 200px;
   }
 `;
+
+/*const Container = styled.div`
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+`;*/
