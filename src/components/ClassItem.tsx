@@ -5,7 +5,6 @@ interface ItemProps {
   image: string;
   title: string;
   content: string;
-  writer: string;
 }
 
 interface ClassItemProps {
@@ -13,7 +12,7 @@ interface ClassItemProps {
 }
 
 export default function Wrap({ item }: ClassItemProps) {
-  const { image, title, content, writer } = item;
+  const { image, title, content } = item;
   return (
     <Container>
       <Image src={image} alt="img" />
@@ -21,7 +20,6 @@ export default function Wrap({ item }: ClassItemProps) {
         <h3>{title}</h3>
         <span className="content">{content}</span>
       </ContentContainer>
-      <span className="writer">by {writer}</span>
     </Container>
   );
 }
@@ -36,27 +34,32 @@ const Container = styled.div`
   background-color: white;
   margin: 10px;
 
-  .writer {
-    padding: 10px 0 10px 20px;
-    font-size: 13px;
-  }
-
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 
   &:hover {
     scale: 1.02;
     transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  }
+
+  @media (max-width: 767px) {
+    transition: all 0.5s ease-in-out;
+    width: 500px;
   }
 `;
 
 const Image = styled.img`
   width: 320px;
   height: 180px;
+
+  @media (max-width: 767px) {
+    width: 500px;
+    height: 280px;
+  }
 `;
 
 const ContentContainer = styled.div`
   padding: 20px 15px 60px 20px;
-  border-bottom: 1px solid lightgray;
   height: 80px;
   h3 {
     font-size: 16px;

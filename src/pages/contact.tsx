@@ -30,7 +30,7 @@ const ContactPage = () => {
 export default ContactPage;
 
 const BackGroundColor = styled.div`
-  background-color: #1dc392;
+  background-color: #f5f5f7;
   width: 100vw;
   height: 100vh;
   display: flex;

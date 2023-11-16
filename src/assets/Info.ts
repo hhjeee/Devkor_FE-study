@@ -1,53 +1,57 @@
 const Info = [
   {
     image: `images/1.png`,
-    title: "10살 꼬마 개발자, 판교 스타트업 대표가 되다.",
+    title: "React의 기본 개념",
     content:
-      "7살에 프로그래밍을 접했다. 그리고 2022년, 25살에 스타트업 대표가 되었다.",
-    writer: "kyleryu",
+      "Props (Properties) - 컴포넌트에 전달되는 읽기 전용 속성 - 부모 컴포넌트가 자식 컴포넌트로 전달하는 값 (데이터)",
   },
   {
     image: `images/2.png`,
-    model: "IPHONE 15",
-    title: "(번역) 자바스크립트에서 base64 문자열 ...",
+    title: "Next.js 소개 및 자주 쓰는 기능 알아보기",
     content:
-      "자바스크립트 문자열에 base64 인코딩 및 디코딩을 적용하면 어떤 일이 발생할까요? 이 글에서는 미묘한 차이와 피해야 할 일반적인 함정을 살펴봅시다.",
-    writer: "superlipbalm",
+      "웹을 위한 React 프레임워크 ⇒ 특히 SEO를 위한 SSR을 가능하게 해주는 프레임워크",
   },
   {
     image: `images/3.png`,
-    imgVer: "dark",
-    model: "APPLE WATCH SERIES 9",
-    title: "AWS EC2 인스턴스 비용 최적화 기법",
+    title: "실전 JS, TS",
     content:
-      "이번 포스팅에서는 EC2 비용을 절감하는 방법에 대해 알아봅니다. EC2는 AWS에서 가장 많이 사용되는 리소스 중 하나이므로 클라우드 비용 절감에 큰 ...",
-    writer: "skynet",
+      "완전 다른 언어는 아니고 JavaScript에 타입문법만 추가된 ‘JavaScript의 Superset’이라고 볼 수 있음.",
   },
   {
     image: `images/4.png`,
-    imgVer: "light",
-    model: "APPLE WATCH ULTRA 2",
-    title: "JS로 자전과 공전을 구현할 수 있다고?",
+    title: "API",
     content:
-      "블로그를 쓰고 있는 나를 보고 친구가 말했다. '태양을 회전시켜줘' 한문장만 치면 되는 줄 알았는데",
-    writer: "greencloud",
+      "Application Programming Interface의 약자로, “한 프로그램에서 다른 프로그램으로 데이터를 주고받기 위한 방법”이다.",
   },
   {
     image: `images/5.png`,
-    imgVer: "light",
-    title: "2023 두번째 TEOConf 후기",
+    title: "http, axios",
     content:
-      "프롤로그 > 길다면 길었던 3개월의 준비기간. 그리고 즐거운 행사와 뒷풀이! 모두 함께해줘서 고맙습니다. 스프린트 참가자 중에 뒷풀이 중에서 '컨퍼런스...",
-    writer: "teo",
+      "axios는 Promise 기반의 HTTP 비동기 통신 라이브러리이며, 아래와 같이 HTTP 메서드를 전부 지원합니다. HTTP 메서드란 ?...",
   },
   {
     image: `images/6.png`,
-    imgVer: "dark",
-    model: "AIRPODS PRO(2세대)",
-    title: "null 리턴은 왜 나쁠까?",
+    title: "Input 관리하기, useRef 알아보기",
     content:
-      "코드 복잡성 관리 측면에서 의미를 축약한 표현의 문제와 해결 방법을 예제로 알아봐요.",
-    writer: "tosspayments",
+      "이번에는 리액트에서 사용자가 입력 할 수 있는 input 태그의 상태를 관리하는 방법을 알아보겠습니다.",
+  },
+  {
+    image: `images/7.png`,
+    title: "react-router-dom",
+    content:
+      "React 앱의 라우팅 처리를 위한 라이브러리, React의 react-router 라이브러리 기반으로 만들어짐 (https://github.com/...",
+  },
+  {
+    image: `images/8.png`,
+    title: "Data Fetching 고급: React-query",
+    content:
+      "공식문서에서는 React-Query를 다음과 같이 설명하고 있다. fetching, caching, 서버 데이터와의 동기화를 지원해주는 라이브러리",
+  },
+  {
+    image: `images/9.png`,
+    title: "반응형 웹 (Responsive Web)",
+    content:
+      "웹 사이트를 다양한 디바이스와 화면 크기에 맞게 조정하여 최적의 사용자 경험을 제공",
   },
 ];
 

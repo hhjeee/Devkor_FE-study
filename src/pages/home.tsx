@@ -2,13 +2,18 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Makeup } from "interface/makeup";
-//import { useQuery } from "@tanstack/react-query";
-//import getProducts from "api/product";
+import { useQuery } from "@tanstack/react-query";
+import getProducts from "api/product";
 
 export default function HomePage() {
-  const [data, setData] = useState<Makeup[]>();
+  //const [data, setData] = useState<Makeup[]>();
 
-  useEffect(() => {
+  const { data } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+
+  /*useEffect(() => {
     //get(endpoint 주소)
     axios
       .get(
@@ -19,41 +24,25 @@ export default function HomePage() {
         setData(res.data);
         //setUser(res.data.result[0]); 사람정보 접근
       });
-  }, []);
+  }, []);*/
 
   return (
     <>
       <Title>베스트 상품</Title>
       <BigContainer>
         <GridContainer>
-          {data?.map((item, index) => (
-            <GridItem key={index}>
-              <img src={item.image_link} alt={`Product ${index}`} />
-              <Name> {item.name} </Name>
-              <Type> {item.product_type} </Type>
-              <Price> ${item.price} </Price>
+          {data?.map((product: any) => (
+            <GridItem key={product.name}>
+              <img src={product.image_link} alt={`Product ${product.name}`} />
+              <Name> {product.name} </Name>
+              <Type> {product.product_type} </Type>
+              <Price> ${product.price} </Price>
             </GridItem>
           ))}
         </GridContainer>
       </BigContainer>
     </>
   );
-
-  /*const { data } = useQuery({
-    queryKey: ["products"],
-    queryFn: getProducts,
-  });
-  return (
-    <div>
-      {data &&
-        data.map((product: any) => (
-          <Container>
-            <h2>{product.name}</h2>
-            <h3>{product.price}</h3>
-          </Container>
-        ))}
-    </div>
-  );*/
 }
 
 const Title = styled.div`
@@ -90,6 +79,10 @@ const BigContainer = styled.div`
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 300px);
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 200px);
+  }
 `;
 
 const GridItem = styled.div`

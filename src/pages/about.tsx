@@ -80,6 +80,10 @@ const Profile = styled.div`
     height: 130px;
     margin-left: 20px;
   }
+
+  @media (max-width: 767px) {
+    width: 500px;
+  }
 `;
 
 const Content = styled.div`
@@ -101,10 +105,9 @@ const Content = styled.div`
 
 const ButtonContainer = styled.div`
   margin-top: 20px;
-  margin-left: 350px;
   display: flex;
-  align-items: start;
-  //justify-content: center;
+  //align-items: start;
+  justify-content: center;
 `;
 
 const Introduction = styled.div`
